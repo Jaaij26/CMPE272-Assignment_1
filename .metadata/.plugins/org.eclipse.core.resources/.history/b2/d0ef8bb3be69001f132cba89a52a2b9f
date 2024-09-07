@@ -1,0 +1,13 @@
+package com.cmpe.assignment1;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class JaaiJoshiAssignment1HelloApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(JaaiJoshiAssignment1HelloApplication.class, args);
+	}
+
+}

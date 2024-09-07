@@ -1,0 +1,65 @@
+//package com.cmpe.assignment1;
+//
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.client.RestTemplate;
+//
+//@SpringBootApplication
+//public class JaaiJoshiAssignment1IntegrationApplication {
+//
+//	public static void main(String[] args) {
+//		SpringApplication.run(JaaiJoshiAssignment1IntegrationApplication.class, args);
+//	}
+//	@Bean
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
+//
+//    @GetMapping("/integrated")
+//    public String integratedMessage() {
+//        String hello_url = "http://192.168.49.2/hello";
+//        String world_url = "http://192.168.49.2/world";;
+//
+//        String helloResponse = restTemplate().getForObject(hello_url, String.class);
+//        String worldResponse = restTemplate().getForObject(world_url, String.class);
+//
+//        return helloResponse + " " + worldResponse;
+//    }
+//
+//}
+package com.cmpe.assignment1;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@SpringBootApplication
+@RestController
+public class JaaiJoshiAssignment1IntegrationApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(JaaiJoshiAssignment1IntegrationApplication.class, args);
+    }
+
+//    @Bean
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
+    @Autowired
+//    private RestTemplate restTemplate;
+    @GetMapping("/integrated")
+    public String integratedMessage() {
+        String hello=restTemplate.getForObject("http://hello-service:8080/hello", String.class);
+        String world=restTemplate.getForObject("http://world-service:8081/world", String.class);
+
+        return hello+" "+world;
+    }
+}
+

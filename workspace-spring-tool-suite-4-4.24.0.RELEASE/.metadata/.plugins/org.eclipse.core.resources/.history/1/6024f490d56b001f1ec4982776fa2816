@@ -1,0 +1,5 @@
+FROM openjdk:17
+WORKDIR /app
+ADD target/docker_sb_hello.jar docker_sb_hello.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","docker_sb_hello.jar"]

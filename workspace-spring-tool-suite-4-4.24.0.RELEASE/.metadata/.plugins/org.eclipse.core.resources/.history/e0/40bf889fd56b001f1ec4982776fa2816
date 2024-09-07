@@ -1,0 +1,2 @@
+spring.application.name=jaai_joshi_assignment1_world
+server.port=8081

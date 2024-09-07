@@ -1,0 +1,4 @@
+FROM openjdk:17
+ADD target/docker_sb_world
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","docker_sb_world"]

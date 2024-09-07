@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: integrated-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: integrated
+  template:
+    metadata:
+      labels:
+        app: integrated
+    spec:
+      containers:
+      - name: integrated
+        image: spring_boot_integration
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
