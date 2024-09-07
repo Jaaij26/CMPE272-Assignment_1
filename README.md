@@ -26,5 +26,5 @@ CMPE272 assignment1
 ![world-service](world.png)
 ![integrated-hello world-service](integrated_hello_world.png)
 
-[Dockerhub links to the repositories:](https://hub.docker.com/repositories/jaaij)
+[Dockerhub links to the repositories](https://hub.docker.com/repositories/jaaij)
 
